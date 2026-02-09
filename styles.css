@@ -7,13 +7,13 @@
 
 :root {
     /* Colors */
-    --color-bg: #2B1F1A;
-    --color-text: #F5E6D3;
-    --color-text-secondary: #C4B5A0;
-    --color-accent: #F5E6D3;
-    --color-accent-alt: #E8D4BB;
-    --color-surface: #3D2E26;
-    --color-border: #5C4033;
+    --color-bg: #F5E6D3;
+    --color-text: #2B1F1A;
+    --color-text-secondary: #5C4033;
+    --color-accent: #3D2E26;
+    --color-accent-alt: #2B1F1A;
+    --color-surface: #E8D4BB;
+    --color-border: #C4B5A0;
     
     /* Typography */
     --font-primary: 'Space Grotesk', sans-serif;
@@ -129,7 +129,7 @@ body {
 }
 
 .logo-img {
-    height: 50px;
+    height: 35px;
     width: auto;
     object-fit: contain;
 }
