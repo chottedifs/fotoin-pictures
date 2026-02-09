@@ -7,13 +7,13 @@
 
 :root {
     /* Colors */
-    --color-bg: #0A0A0A;
-    --color-text: #FFFFFF;
-    --color-text-secondary: #A0A0A0;
-    --color-accent: #FFE500;
-    --color-accent-alt: #00F0FF;
-    --color-surface: #151515;
-    --color-border: #2A2A2A;
+    --color-bg: #2B1F1A;
+    --color-text: #F5E6D3;
+    --color-text-secondary: #C4B5A0;
+    --color-accent: #D4A574;
+    --color-accent-alt: #A67C52;
+    --color-surface: #3D2E26;
+    --color-border: #5C4033;
     
     /* Typography */
     --font-primary: 'Space Grotesk', sans-serif;
@@ -517,7 +517,7 @@ body {
 /* ==================== SERVICES SECTION ==================== */
 .services {
     padding: var(--spacing-xl) 0;
-    background: var(--color-bg);
+    background: linear-gradient(to bottom, var(--color-bg) 0%, #3D2E26 100%);
 }
 
 .services-container {
@@ -652,7 +652,7 @@ body {
 /* ==================== PORTFOLIO SECTION ==================== */
 .portfolio {
     padding: var(--spacing-xl) 0;
-    background: var(--color-surface);
+    background: linear-gradient(to bottom, #3D2E26 0%, var(--color-bg) 100%);
 }
 
 .portfolio-container {
