@@ -100,10 +100,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--color-border);
-}
+    background: rgba(61, 46, 38, 0.85);\n    backdrop-filter: blur(20px);\n    -webkit-backdrop-filter: blur(20px);\n    border-bottom: 1px solid rgba(196, 181, 160, 0.3);\n    box-shadow: 0 4px 20px rgba(43, 31, 26, 0.1);\n}\n\n.navbar.scrolled .nav-link {\n    color: var(--color-bg);\n}\n\n.navbar.scrolled .logo {\n    filter: brightness(1.2);\n}
 
 .nav-container {
     max-width: 1400px;
@@ -523,7 +520,7 @@ body {
 /* ==================== SERVICES SECTION ==================== */
 .services {
     padding: var(--spacing-xl) 0;
-    background: linear-gradient(to bottom, var(--color-bg) 0%, #3D2E26 100%);
+    background: var(--color-surface);
 }
 
 .services-container {
@@ -560,6 +557,7 @@ body {
     font-family: var(--font-heading);
     font-size: clamp(3rem, 6vw, 5rem);
     line-height: 1;
+    color: var(--color-text);
 }
 
 .section-title-alt .word {
@@ -658,7 +656,7 @@ body {
 /* ==================== PORTFOLIO SECTION ==================== */
 .portfolio {
     padding: var(--spacing-xl) 0;
-    background: linear-gradient(to bottom, #3D2E26 0%, var(--color-bg) 100%);
+    background: var(--color-bg);
 }
 
 .portfolio-container {
