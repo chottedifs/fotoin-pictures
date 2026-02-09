@@ -10,8 +10,8 @@
     --color-bg: #2B1F1A;
     --color-text: #F5E6D3;
     --color-text-secondary: #C4B5A0;
-    --color-accent: #D4A574;
-    --color-accent-alt: #A67C52;
+    --color-accent: #F5E6D3;
+    --color-accent-alt: #E8D4BB;
     --color-surface: #3D2E26;
     --color-border: #5C4033;
     
@@ -126,6 +126,12 @@ body {
 
 .logo:hover {
     transform: scale(1.05);
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-icon {
