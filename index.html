@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fotoin Pictures - Layanan fotografi, videografi, dan event organization profesional untuk momen berharga Anda.">
+    <title>Fotoin Pictures - Professional Photography, Videography & Event Organization</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo+Black&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor follower -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">●</span>
+                <span class="logo-text">
+                    <span class="logo-main">FOTOIN</span>
+                    <span class="logo-sub">PICTURES</span>
+                </span>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-menu-inner">
+                    <ul class="nav-links">
+                        <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
+                        <li><a href="#work" class="nav-link" data-text="Work">Work</a></li>
+                        <li><a href="#services" class="nav-link" data-text="Services">Services</a></li>
+                        <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                        <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+                    </ul>
+                    <div class="nav-contact">
+                        <p class="nav-label">Get in touch</p>
+                        <a href="mailto:info@fotoinpictures.com" class="nav-email">info@fotoinpictures.com</a>
+                        <a href="tel:+6281234567890" class="nav-phone">+62 812-3456-7890</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-grid">
+            <div class="hero-left">
+                <div class="hero-content">
+                    <div class="hero-label">
+                        <span class="dot"></span>
+                        <span class="text">CREATIVE STUDIO</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="line">CRAFTING</span>
+                        <span class="line highlight">MEMORIES</span>
+                        <span class="line">THROUGH LENS</span>
+                    </h1>
+                    <p class="hero-description">
+                        Kami mengabadikan momen berharga dengan sentuhan artistik dan profesional. 
+                        Dari fotografi hingga event organization yang sempurna.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary">
+                            <span>Start Your Project</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#work" class="btn-secondary">View Our Work</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-images">
+                    <div class="image-stack">
+                        <div class="image-card img-1" data-scroll-speed="2" style="background-image: url('https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&q=80');">
+                            <div class="image-overlay">
+                                <span class="category">WEDDING</span>
+                            </div>
+                        </div>
+                        <div class="image-card img-2" data-scroll-speed="1.5" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80');">
+                            <div class="image-overlay">
+                                <span class="category">PORTRAIT</span>
+                            </div>
+                        </div>
+                        <div class="image-card img-3" data-scroll-speed="1" style="background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80');">
+                            <div class="image-overlay">
+                                <span class="category">EVENT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll to explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-container">
+            <div class="section-header-alt">
+                <div class="section-label">
+                    <span class="line"></span>
+                    <span class="text">WHAT WE DO</span>
+                </div>
+                <h2 class="section-title-alt">
+                    <span class="word">Our</span>
+                    <span class="word highlight">Services</span>
+                </h2>
+            </div>
+            
+            <div class="services-grid-alt">
+                <div class="service-item service-large">
+                    <div class="service-number">01</div>
+                    <div class="service-content">
+                        <h3 class="service-name">PHOTOGRAPHY</h3>
+                        <p class="service-desc">Capturing moments with artistic vision and technical precision. From weddings to commercial projects.</p>
+                        <div class="service-list">
+                            <span>Wedding</span>
+                            <span>Portrait</span>
+                            <span>Product</span>
+                            <span>Event</span>
+                        </div>
+                        <a href="#contact" class="service-link">
+                            <span>Explore</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="service-bg"></div>
+                </div>
+
+                <div class="service-item service-medium">
+                    <div class="service-number">02</div>
+                    <div class="service-content">
+                        <h3 class="service-name">VIDEOGRAPHY</h3>
+                        <p class="service-desc">Cinematic storytelling that brings your moments to life with emotion and style.</p>
+                        <div class="service-list">
+                            <span>Cinematic</span>
+                            <span>Commercial</span>
+                            <span>Corporate</span>
+                        </div>
+                        <a href="#contact" class="service-link">
+                            <span>Explore</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="service-bg"></div>
+                </div>
+
+                <div class="service-item service-medium">
+                    <div class="service-number">03</div>
+                    <div class="service-content">
+                        <h3 class="service-name">EVENT ORGANIZATION</h3>
+                        <p class="service-desc">Complete event planning and management from concept to flawless execution.</p>
+                        <div class="service-list">
+                            <span>Wedding</span>
+                            <span>Corporate</span>
+                            <span>Exhibition</span>
+                        </div>
+                        <a href="#contact" class="service-link">
+                            <span>Explore</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="service-bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="portfolio">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <div class="portfolio-header-left">
+                    <div class="section-label">
+                        <span class="line"></span>
+                        <span class="text">SELECTED WORKS</span>
+                    </div>
+                    <h2 class="section-title-alt">
+                        <span class="word">Our</span>
+                        <span class="word highlight">Portfolio</span>
+                    </h2>
+                </div>
+                <div class="portfolio-header-right">
+                    <div class="portfolio-filters">
+                        <button class="filter-tag active" data-filter="all">All</button>
+                        <button class="filter-tag" data-filter="photography">Photography</button>
+                        <button class="filter-tag" data-filter="videography">Video</button>
+                        <button class="filter-tag" data-filter="event">Events</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-masonry">
+                <div class="portfolio-card" data-category="photography">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80" alt="Wedding Photography">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-category">PHOTOGRAPHY</div>
+                        <h3 class="card-title">Sarah & David Wedding</h3>
+                        <p class="card-date">December 2025</p>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="overlay-content">
+                            <span class="view-project">View Project</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card tall" data-category="videography">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80" alt="Cinematic Video">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-category">VIDEOGRAPHY</div>
+                        <h3 class="card-title">Cinematic Wedding Film</h3>
+                        <p class="card-date">November 2025</p>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="overlay-content">
+                            <span class="view-project">View Project</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card wide" data-category="event">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" alt="Corporate Event">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-category">EVENT</div>
+                        <h3 class="card-title">Corporate Anniversary</h3>
+                        <p class="card-date">October 2025</p>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="overlay-content">
+                            <span class="view-project">View Project</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="photography">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="Prewedding">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-category">PHOTOGRAPHY</div>
+                        <h3 class="card-title">Lisa & Michael Prewedding</h3>
+                        <p class="card-date">September 2025</p>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="overlay-content">
+                            <span class="view-project">View Project</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="photography">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" alt="Product Photography">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-category">PHOTOGRAPHY</div>
+                        <h3 class="card-title">Product Shoot</h3>
+                        <p class="card-date">August 2025</p>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="overlay-content">
+                            <span class="view-project">View Project</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="videography">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80" alt="Company Profile">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-category">VIDEOGRAPHY</div>
+                        <h3 class="card-title">Company Profile Video</h3>
+                        <p class="card-date">July 2025</p>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="overlay-content">
+                            <span class="view-project">View Project</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Testimonials Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <div class="section-label">
+                    <span class="line"></span>
+                    <span class="text">CLIENT STORIES</span>
+                </div>
+                <h2 class="section-title-alt">
+                    <span class="word">What</span>
+                    <span class="word highlight">They Say</span>
+                </h2>
+                <p class="about-text">
+                    Kepuasan klien adalah prioritas kami. Lihat apa kata mereka tentang 
+                    pengalaman bekerja dengan Fotoin Pictures.
+                </p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-item">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-content">
+                            Fotoin Pictures membuat hari pernikahan kami menjadi sangat istimewa! 
+                            Hasil foto dan videonya luar biasa, sangat profesional dan detail. 
+                            Tim yang sangat responsif dan memahami visi kami.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <div class="author-name">Sarah & David</div>
+                                <div class="author-role">Wedding Client</div>
+                            </div>
+                            <div class="author-rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-content">
+                            Tim yang sangat kreatif dan profesional. Event launching produk kami 
+                            berjalan sempurna berkat bantuan Fotoin Pictures. Dokumentasinya 
+                            juga keren banget! Highly recommended.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <div class="author-name">Amanda Bella</div>
+                                <div class="author-role">Corporate Client</div>
+                            </div>
+                            <div class="author-rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-content">
+                            Pelayanan yang memuaskan dari awal konsultasi hingga delivery hasil akhir. 
+                            Kualitas foto produk kami meningkat drastis untuk marketing. 
+                            Partnership yang sangat valuable!
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <div class="author-name">Rizky Tama</div>
+                                <div class="author-role">Product Photography</div>
+                            </div>
+                            <div class="author-rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" id="prevTestimonial">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M12 16L6 10L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="slider-pagination" id="testimonialPagination"></div>
+                    <button class="slider-btn next" id="nextTestimonial">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <div class="section-label">
+                        <span class="line"></span>
+                        <span class="text">LET'S WORK TOGETHER</span>
+                    </div>
+                    <h2 class="contact-title">
+                        <span class="line">Start Your</span>
+                        <span class="line highlight">Next Project</span>
+                    </h2>
+                    <p class="contact-description">
+                        Siap mewujudkan momen istimewa Anda? Hubungi kami sekarang untuk 
+                        konsultasi gratis dan penawaran terbaik.
+                    </p>
+
+                    <div class="contact-info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Email</div>
+                            <a href="mailto:info@fotoinpictures.com" class="info-value">
+                                info@fotoinpictures.com
+                            </a>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Phone</div>
+                            <a href="tel:+6281234567890" class="info-value">
+                                +62 812-3456-7890
+                            </a>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Location</div>
+                            <div class="info-value">Jakarta, Indonesia</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Social</div>
+                            <div class="social-links-alt">
+                                <a href="#" class="social-link-alt">Instagram</a>
+                                <a href="#" class="social-link-alt">Facebook</a>
+                                <a href="#" class="social-link-alt">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <form class="contact-form-alt" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name *</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email Address *</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Phone Number *</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <select id="service" name="service" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="photography">Photography</option>
+                                    <option value="videography">Videography</option>
+                                    <option value="event">Event Organization</option>
+                                    <option value="package">Complete Package</option>
+                                </select>
+                                <label for="service">Service Needed *</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="message">Your Message *</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Send Message</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">●</span>
+                        <span class="logo-text">
+                            <span class="logo-main">FOTOIN</span>
+                            <span class="logo-sub">PICTURES</span>
+                        </span>
+                    </a>
+                    <p class="footer-description">
+                        Mengabadikan momen berharga Anda melalui lensa kreatif dan
+                        sentuhan profesional. Spesialisasi di bidang fotografi,
+                        videografi, dan event organization.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="mailto:info@fotoinpictures.com" class="footer-contact-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 4h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M2 5l8 5 8-5" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            info@fotoinpictures.com
+                        </a>
+                        <a href="tel:+6281234567890" class="footer-contact-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 3h3.5l1.5 4-2 1.5a11 11 0 0 0 5.5 5.5l1.5-2 4 1.5v3.5a1 1 0 0 1-1 1A14 14 0 0 1 2 4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            +62 812-3456-7890
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Explore</h4>
+                        <ul class="footer-list">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#work">Portfolio</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Services</h4>
+                        <ul class="footer-list">
+                            <li><a href="#services">Wedding Photography</a></li>
+                            <li><a href="#services">Commercial Video</a></li>
+                            <li><a href="#services">Event Management</a></li>
+                            <li><a href="#services">Product Photography</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Follow Us</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Fotoin Pictures. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="divider">•</span>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
