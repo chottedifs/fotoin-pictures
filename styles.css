@@ -60,7 +60,7 @@ body::before {
     right: 0;
     bottom: 0;
     background: var(--color-bg);
-    opacity: 0.92;
+    opacity: 0.75;
     z-index: -1;
     pointer-events: none;
 }
@@ -549,7 +549,10 @@ body::before {
 /* ==================== SERVICES SECTION ==================== */
 .services {
     padding: var(--spacing-xl) 0;
-    background: var(--color-surface);
+    background-color: var(--color-surface);
+    background-image: url('assets/images/portfolio/Flower.png');
+    background-size: 250px 250px;
+    background-repeat: repeat;
     position: relative;
     overflow: hidden;
 }
@@ -642,7 +645,7 @@ body::before {
 .service-number {
     font-family: var(--font-heading);
     font-size: 4rem;
-    color: rgba(255, 229, 0, 0.1);
+    text-shadow: 0 0 40px rgba(255, 229, 0, 0.5);
     line-height: 1;
     margin-bottom: 1rem;
 }
@@ -703,7 +706,10 @@ body::before {
 /* ==================== PORTFOLIO SECTION ==================== */
 .portfolio {
     padding: var(--spacing-xl) 0;
-    background: var(--color-bg);
+    background-color: var(--color-bg);
+    background-image: url('assets/images/portfolio/Flower.png');
+    background-size: 250px 250px;
+    background-repeat: repeat;
 }
 
 .portfolio-container {
@@ -908,7 +914,7 @@ body::before {
 .testimonial-quote {
     font-family: var(--font-heading);
     font-size: 6rem;
-    color: rgba(255, 229, 0, 0.1);
+    color: rgba(52, 51, 45, 0.1);
     line-height: 1;
     position: absolute;
     top: 1rem;
@@ -993,7 +999,10 @@ body::before {
 /* ==================== CONTACT SECTION ==================== */
 .contact {
     padding: var(--spacing-xl) 0;
-    background: var(--color-surface);
+    background-color: var(--color-surface);
+    background-image: url('assets/images/portfolio/Flower.png');
+    background-size: 250px 250px;
+    background-repeat: repeat;
     position: relative;
     overflow: hidden;
 }
@@ -1184,7 +1193,10 @@ body::before {
 
 /* ==================== FOOTER ==================== */
 .footer {
-    background: var(--color-surface);
+    background-color: var(--color-surface);
+    background-image: url('assets/images/portfolio/Flower.png');
+    background-size: 250px 250px;
+    background-repeat: repeat;
     border-top: 1px solid var(--color-border);
     padding: 5rem 0 0;
 }
