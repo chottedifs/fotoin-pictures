@@ -61,7 +61,7 @@ body::before {
     right: 0;
     bottom: 0;
     background: var(--color-bg);
-    opacity: 0.75;
+    opacity: 0.85;
     z-index: -1;
     pointer-events: none;
 }
@@ -872,7 +872,11 @@ body::before {
 /* ==================== ABOUT / TESTIMONIALS ==================== */
 .about {
     padding: var(--spacing-xl) 0;
-    background: var(--color-bg);
+    background-color: var(--color-bg);
+    background-image: url('assets/images/portfolio/Flower.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .about-container {
