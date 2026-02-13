@@ -1,603 +1,794 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fotoin Pictures - Layanan fotografi, videografi, dan event organization profesional untuk momen berharga Anda.">
-    <title>Fotoin Pictures - Professional Photography, Videography & Event Organization</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo+Black&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Fotoin Pictures - Jasa Fotografi Profesional Indonesia</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FFF4E6',
+                        'brown': '#6B4423',
+                        'brown-light': '#A0785A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tilt-card-1 {
+            transform: perspective(1000px) rotateZ(12deg) rotateY(8deg) rotateX(-3deg);
+            transition: transform 0.3s;
+        }
+        .tilt-card-2 {
+            transform: perspective(1000px) rotateZ(-12deg) rotateY(-8deg) rotateX(-3deg);
+            transition: transform 0.3s;
+        }
+        .tilt-card-3 {
+            transform: perspective(1000px) rotateZ(12deg) rotateY(8deg) rotateX(-3deg);
+            transition: transform 0.3s;
+        }
+        .tilt-card-4 {
+            transform: perspective(1000px) rotateZ(-12deg) rotateY(-8deg) rotateX(-3deg);
+            transition: transform 0.3s;
+        }
+        .tilt-card-1:hover {
+            transform: perspective(1000px) rotateZ(10deg) rotateY(6deg) rotateX(-2deg) scale(1.05);
+        }
+        .tilt-card-2:hover {
+            transform: perspective(1000px) rotateZ(-10deg) rotateY(-6deg) rotateX(-2deg) scale(1.05);
+        }
+        .tilt-card-3:hover {
+            transform: perspective(1000px) rotateZ(10deg) rotateY(6deg) rotateX(-2deg) scale(1.05);
+        }
+        .tilt-card-4:hover {
+            transform: perspective(1000px) rotateZ(-10deg) rotateY(-6deg) rotateX(-2deg) scale(1.05);
+        }
+        
+        .skew-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .skew-bg::before {
+            content: '';
+            position: absolute;
+            top: -2%;
+            left: -2%;
+            right: -2%;
+            bottom: -2%;
+            background-color: #6B4423;
+            transform: skewY(-3deg);
+            z-index: 0;
+        }
+        .skew-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
-<body>
-    <!-- Cursor follower -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+<body class="bg-white antialiased">
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="assets/images/logo/logo-footer-transparent.png" alt="Fotoin Pictures" class="logo-img">
-            </a>
-            <button class="nav-toggle" id="navToggle">
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-            <div class="nav-menu" id="navMenu">
-                <div class="nav-menu-inner">
-                    <ul class="nav-links">
-                        <li><a href="#home" class="nav-link" data-text="Beranda">Beranda</a></li>
-                        <li><a href="#work" class="nav-link" data-text="Portofolio">Portofolio</a></li>
-                        <li><a href="#services" class="nav-link" data-text="Layanan">Layanan</a></li>
-                        <li><a href="#about" class="nav-link" data-text="Tentang">Tentang</a></li>
-                        <li><a href="#contact" class="nav-link" data-text="Kontak">Kontak</a></li>
-                    </ul>
-                    <div class="nav-contact">
-                        <p class="nav-label">Hubungi Kami</p>
-                        <a href="mailto:info@fotoinpictures.com" class="nav-email">info@fotoinpictures.com</a>
-                        <a href="tel:+6281234567890" class="nav-phone">+62 812-3456-7890</a>
-                    </div>
+    <nav class="bg-brown sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <img src="assets/logo/logo-footer-transparent.png" alt="Fotoin Pictures Logo" class="h-8 md:h-10 lg:h-12 w-auto">
                 </div>
+                
+                <!-- Navigation Links - Desktop -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="text-cream hover:text-white transition-colors font-medium">Beranda</a>
+                    <a href="#services" class="text-cream hover:text-white transition-colors font-medium">Layanan</a>
+                    <a href="#portfolio" class="text-cream hover:text-white transition-colors font-medium">Portfolio</a>
+                    <a href="#pricing" class="text-cream hover:text-white transition-colors font-medium">Harga</a>
+                    <a href="#about" class="text-cream hover:text-white transition-colors font-medium">Tentang</a>
+                </div>
+                
+                <!-- CTA Button & Mobile Menu Toggle -->
+                <div class="flex items-center gap-3">
+                    <button class="hidden sm:block px-4 md:px-6 py-2 md:py-3 bg-cream text-brown rounded-lg hover:bg-cream/90 transition-all font-semibold text-sm md:text-base">
+                        Hubungi Kami
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="lg:hidden text-cream p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brown-light">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#" class="block text-cream hover:text-white transition-colors font-medium py-2">Beranda</a>
+                <a href="#services" class="block text-cream hover:text-white transition-colors font-medium py-2">Layanan</a>
+                <a href="#portfolio" class="block text-cream hover:text-white transition-colors font-medium py-2">Portfolio</a>
+                <a href="#pricing" class="block text-cream hover:text-white transition-colors font-medium py-2">Harga</a>
+                <a href="#about" class="block text-cream hover:text-white transition-colors font-medium py-2">Tentang</a>
+                <button class="sm:hidden w-full mt-3 px-6 py-3 bg-cream text-brown rounded-lg hover:bg-cream/90 transition-all font-semibold">
+                    Hubungi Kami
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-grid">
-            <div class="hero-left">
-                <div class="hero-content">
-                    <div class="hero-label">
-                        <span class="dot"></span>
-                        <span class="text">STUDIO KREATIF</span>
-                    </div>
-                    <h1 class="hero-title">
-                        <span class="line">MENGABADIKAN</span>
-                        <span class="line highlight">KENANGAN</span>
-                        <span class="line">LEWAT LENSA</span>
-                    </h1>
-                    <p class="hero-description">
-                        Spesialis dokumentasi pernikahan, lamaran, dan produk dengan sentuhan artistik. 
-                        Dari videografi wedding cinematic hingga fotografi produk profesional.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn-primary">
-                            <span>Mulai Proyek Anda</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                        <a href="#work" class="btn-secondary">Lihat Karya Kami</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Proyek Selesai</div>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Tahun Pengalaman</div>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Kepuasan Klien</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-right">
-                <div class="hero-images">
-                    <div class="image-stack">
-                        <div class="image-card img-1" data-scroll-speed="2" style="background-image: url('assets/images/portfolio/potrait-asset-text-1.jpeg');">
-                            <div class="image-overlay">
-                                <span class="category">WEDDING</span>
-                            </div>
-                        </div>
-                        <div class="image-card img-2" data-scroll-speed="1.5" style="background-image: url('assets/images/portfolio/potrait-asset-text-2.jpeg');">
-                            <div class="image-overlay">
-                                <span class="category">PORTRAIT</span>
-                            </div>
-                        </div>
-                        <div class="image-card img-3" data-scroll-speed="1" style="background-image: url('assets/images/portfolio/potrait-asset-text-3.jpeg');">
-                            <div class="image-overlay">
-                                <span class="category">EVENT</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="bg-brown pt-12 md:pt-20 relative overflow-hidden">        
+        <!-- Star Decorations -->
+        <img src="assets/Star 1.png" alt="star" class="hidden md:block absolute top-10 right-20 w-8 h-8 opacity-50 animate-pulse z-10">
+        <img src="assets/Star 1.png" alt="star" class="hidden md:block absolute bottom-20 left-10 w-6 h-6 opacity-30 animate-pulse z-10" style="animation-delay: 0.5s;">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 md:py-24">
+            <div class="text-center mb-12 md:mb-16">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-4" data-aos="fade-down" data-aos-duration="1000">
+                    <span class="text-cream">Fotoin</span><span class="text-white"> Pictures</span>
+                </h1>
+                <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-cream mb-4 md:mb-6 font-medium px-4" data-aos="fade-up" data-aos-delay="200">
+                    Jasa Fotografi Profesional Indonesia
+                </h2>
+                <p class="text-cream/70 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4" data-aos="fade-up" data-aos-delay="400">
+                    Fotoin Pictures menyediakan berbagai layanan fotografi profesional, mulai dari foto produk, 
+                    dokumentasi acara, hingga fotografi komersial. Kami membantu mengabadikan momen berharga Anda dengan hasil terbaik.
+                </p>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span class="scroll-text">Scroll untuk melihat</span>
-            <div class="scroll-line"></div>
+
+        <!-- SVG Background Shape -->
+        <svg class="absolute bottom-0 left-0 w-full h-24 md:h-40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FFF4E6" fill-opacity="1" d="M0,256L1440,160L1440,320L0,320Z"></path>
+        </svg>
+    </section>
+
+    <section class="bg-cream -mt-12 md:-mt-20 pb-8 md:pb-0">
+        <!-- Tilted Cards - Hidden on mobile, visible on tablet+ -->
+        <div class="hidden lg:flex justify-center gap-12 max-w-5xl mx-auto">
+            <!-- Group 1: Card 1 & 2 (No gap) -->
+            <div class="flex" data-aos="fade-right" data-aos-duration="800">
+                <div class="tilt-card-1 bg-gray-100 rounded-3xl w-64 h-72 shadow-2xl"></div>
+                <div class="tilt-card-2 bg-gray-100 rounded-3xl w-64 h-72 shadow-2xl"></div>
+            </div>
+            
+            <!-- Group 2: Card 3 & 4 (No gap) -->
+            <div class="flex" data-aos="fade-left" data-aos-duration="800">
+                <div class="tilt-card-3 bg-gray-100 rounded-3xl w-64 h-72 shadow-2xl"></div>
+                <div class="tilt-card-4 bg-gray-100 rounded-3xl w-64 h-72 shadow-2xl"></div>
+            </div>
+        </div>
+        
+        <!-- Mobile Card Grid -->
+        <div class="lg:hidden grid grid-cols-2 gap-4 max-w-2xl mx-auto px-4">
+            <div class="bg-gray-100 rounded-2xl h-48 shadow-lg" data-aos="fade-up" data-aos-delay="0"></div>
+            <div class="bg-gray-100 rounded-2xl h-48 shadow-lg" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="bg-gray-100 rounded-2xl h-48 shadow-lg" data-aos="fade-up" data-aos-delay="200"></div>
+            <div class="bg-gray-100 rounded-2xl h-48 shadow-lg" data-aos="fade-up" data-aos-delay="300"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-cream py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-brown leading-tight mb-6 md:mb-8">
+                        Abadikan momen.<br>
+                        Ciptakan kenangan<br>
+                        yang tak terlupakan.
+                    </h2>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm h-[200px] md:h-[300px]"></div>
+                </div>
+                <div class="space-y-4 md:space-y-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <p class="text-gray-600 text-sm sm:text-base md:text-lg">
+                        Fotoin Pictures adalah tim fotografer profesional yang berpengalaman dalam mengabadikan momen-momen 
+                        berharga Anda. Kami percaya pada kreativitas, detail, dan kepuasan klien. Setiap foto yang kami hasilkan 
+                        adalah karya seni yang bercerita.
+                    </p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm h-[250px] md:h-[375px]"></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="services-container">
-            <div class="section-header-alt">
-                <div class="section-label">
-                    <span class="line"></span>
-                    <span class="text">APA YANG KAMI LAKUKAN</span>
-                </div>
-                <h2 class="section-title-alt">
-                    <span class="word">Layanan</span>
-                    <span class="word highlight">Kami</span>
-                </h2>
-            </div>
-            
-            <div class="services-grid-alt">
-                <div class="service-item service-large">
-                    <div class="service-number">01</div>
-                    <div class="service-content">
-                        <h3 class="service-name">PHOTOGRAPHY</h3>
-                        <p class="service-desc">Dokumentasi moment spesial dengan detail sempurna. Spesialisasi fotografi lamaran dan pernikahan.</p>
-                        <div class="service-list">
-                            <span>Lamaran</span>
-                            <span>Nikah</span>
-                            <span>Produk</span>
-                            <span>Portrait</span>
-                        </div>
-                        <a href="#contact" class="service-link">
-                            <span>Explore</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="service-bg"></div>
-                </div>
-
-                <div class="service-item service-medium">
-                    <div class="service-number">02</div>
-                    <div class="service-content">
-                        <h3 class="service-name">VIDEOGRAPHY</h3>
-                        <p class="service-desc">Videografi wedding cinematic yang menghidupkan kembali momen istimewa Anda dengan emosi dan gaya.</p>
-                        <div class="service-list">
-                            <span>Wedding Film</span>
-                            <span>Produk</span>
-                            <span>Commercial</span>
-                        </div>
-                        <a href="#contact" class="service-link">
-                            <span>Explore</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="service-bg"></div>
-                </div>
-
-                <div class="service-item service-medium">
-                    <div class="service-number">03</div>
-                    <div class="service-content">
-                        <h3 class="service-name">PRODUCT DOCUMENTATION</h3>
-                        <p class="service-desc">Foto dan video produk berkualitas tinggi untuk keperluan marketing dan katalog bisnis Anda.</p>
-                        <div class="service-list">
-                            <span>Product Photo</span>
-                            <span>Product Video</span>
-                            <span>E-commerce</span>
-                        </div>
-                        <a href="#contact" class="service-link">
-                            <span>Explore</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="service-bg"></div>
-                </div>
-            </div>
+    <section class="bg-cream py-12 md:py-20 relative" id="services">        
+        <!-- WHY MEET US Vertical Text - Hidden on mobile -->
+        <div class="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 -rotate-90 origin-center z-10">
+            <span class="text-brown font-bold text-sm tracking-widest">MENGAPA KAMI</span>
         </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="work" class="portfolio">
-        <div class="portfolio-container">
-            <div class="portfolio-header">
-                <div class="portfolio-header-left">
-                    <div class="section-label">
-                        <span class="line"></span>
-                        <span class="text">KARYA TERPILIH</span>
-                    </div>
-                    <h2 class="section-title-alt">
-                        <span class="word">Portofolio</span>
-                        <span class="word highlight">Kami</span>
-                    </h2>
-                </div>
-                <div class="portfolio-header-right">
-                    <div class="portfolio-filters">
-                        <button class="filter-tag active" data-filter="all">Semua</button>
-                        <button class="filter-tag" data-filter="photography">Fotografi</button>
-                        <button class="filter-tag" data-filter="videography">Videografi</button>
-                        <button class="filter-tag" data-filter="product">Produk</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-masonry">
-                <div class="portfolio-card" data-category="photography">
-                    <div class="card-image">
-                        <img src="assets/images/portfolio/potrait-asset-clean-1.jpeg" alt="Wedding Photography">
-                    </div>
-                    <div class="card-info">
-                        <div class="card-category">PHOTOGRAPHY</div>
-                        <h3 class="card-title">Pernikahan Sarah & David</h3>
-                        <p class="card-date">Desember 2025</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="overlay-content">
-                            <span class="view-project">Lihat Proyek</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card tall" data-category="videography">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80" alt="Cinematic Video">
-                    </div>
-                    <div class="card-info">
-                        <div class="card-category">VIDEOGRAPHY</div>
-                        <h3 class="card-title">Wedding Film Cinematic</h3>
-                        <p class="card-date">November 2025</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="overlay-content">
-                            <span class="view-project">Lihat Proyek</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card wide" data-category="photography">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" alt="Engagement Photography">
-                    </div>
-                    <div class="card-info">
-                        <div class="card-category">PHOTOGRAPHY</div>
-                        <h3 class="card-title">Foto Lamaran Lisa & Michael</h3>
-                        <p class="card-date">Oktober 2025</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="overlay-content">
-                            <span class="view-project">Lihat Proyek</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card" data-category="photography">
-                    <div class="card-image">
-                        <img src="assets/images/portfolio/potrait-asset-clean-2.jpeg" alt="Prewedding">
-                    </div>
-                    <div class="card-info">
-                        <div class="card-category">PHOTOGRAPHY</div>
-                        <h3 class="card-title">Foto Lamaran Amanda & Rizky</h3>
-                        <p class="card-date">September 2025</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="overlay-content">
-                            <span class="view-project">Lihat Proyek</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card" data-category="photography">
-                    <div class="card-image">
-                        <img src="assets/images/portfolio/potrait-asset-clean-3.jpeg" alt="Product Photography">
-                    </div>
-                    <div class="card-info">
-                        <div class="card-category">PHOTOGRAPHY</div>
-                        <h3 class="card-title">Product Shoot</h3>
-                        <p class="card-date">August 2025</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="overlay-content">
-                            <span class="view-project">Lihat Proyek</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card" data-category="videography">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80" alt="Company Profile">
-                    </div>
-                    <div class="card-info">
-                        <div class="card-category">VIDEOGRAPHY</div>
-                        <h3 class="card-title">Company Profile Video</h3>
-                        <p class="card-date">July 2025</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="overlay-content">
-                            <span class="view-project">Lihat Proyek</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About / Testimonials Section -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-content">
-                <div class="section-label">
-                    <span class="line"></span>
-                    <span class="text">CLIENT STORIES</span>
-                </div>
-                <h2 class="section-title-alt">
-                    <span class="word">What</span>
-                    <span class="word highlight">They Say</span>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8 md:mb-12" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-brown">
+                    Layanan <span class="text-brown bg-brown/10 px-2">Kami</span>
                 </h2>
-                <p class="about-text">
-                    Kepuasan klien adalah prioritas kami. Lihat apa kata mereka tentang 
-                    pengalaman bekerja dengan Fotoin Pictures.
+                <p class="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl">
+                    Fotoin Pictures menawarkan berbagai layanan fotografi yang disesuaikan dengan kebutuhan unik setiap klien
                 </p>
             </div>
 
-            <div class="testimonials-slider">
-                <div class="testimonial-track">
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-content">
-                            Fotoin Pictures membuat hari pernikahan kami menjadi sangat istimewa! 
-                            Hasil foto dan videonya luar biasa, sangat profesional dan detail. 
-                            Tim yang sangat responsif dan memahami visi kami.
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-details">
-                                <div class="author-name">Sarah & David</div>
-                                <div class="author-role">Wedding Client</div>
-                            </div>
-                            <div class="author-rating">
-                                <span>★★★★★</span>
-                            </div>
+            <div class="grid md:grid-cols-3 gap-6 md:gap-12 items-start">
+                <!-- Services List -->
+                <div class="space-y-3 md:space-y-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="bg-brown text-white rounded-xl md:rounded-2xl p-4 md:p-6 flex justify-between items-center group hover:bg-brown-light transition-all cursor-pointer" data-aos="fade-up" data-aos-delay="150">
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <span class="text-lg md:text-2xl font-bold">01</span>
+                            <span class="text-base md:text-xl font-semibold">Foto Produk</span>
                         </div>
+                        <svg class="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
                     </div>
 
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-content">
-                            Tim yang sangat kreatif dan profesional. Event launching produk kami 
-                            berjalan sempurna berkat bantuan Fotoin Pictures. Dokumentasinya 
-                            juga keren banget! Highly recommended.
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-details">
-                                <div class="author-name">Amanda Bella</div>
-                                <div class="author-role">Corporate Client</div>
-                            </div>
-                            <div class="author-rating">
-                                <span>★★★★★</span>
-                            </div>
+                    <div class="bg-gray-100 text-gray-900 rounded-xl md:rounded-2xl p-4 md:p-6 flex justify-between items-center group hover:bg-gray-200 transition-all cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <span class="text-lg md:text-2xl font-bold">02</span>
+                            <span class="text-base md:text-xl font-semibold">Dokumentasi Acara</span>
                         </div>
+                        <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
                     </div>
 
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-content">
-                            Pelayanan yang memuaskan dari awal konsultasi hingga delivery hasil akhir. 
-                            Kualitas foto produk kami meningkat drastis untuk marketing. 
-                            Partnership yang sangat valuable!
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-details">
-                                <div class="author-name">Rizky Tama</div>
-                                <div class="author-role">Product Photography</div>
-                            </div>
-                            <div class="author-rating">
-                                <span>★★★★★</span>
-                            </div>
+                    <div class="bg-gray-100 text-gray-900 rounded-xl md:rounded-2xl p-4 md:p-6 flex justify-between items-center group hover:bg-gray-200 transition-all cursor-pointer" data-aos="fade-up" data-aos-delay="250">
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <span class="text-lg md:text-2xl font-bold">03</span>
+                            <span class="text-base md:text-xl font-semibold">Foto Pernikahan</span>
                         </div>
+                        <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </div>
+
+                    <div class="bg-gray-100 text-gray-900 rounded-xl md:rounded-2xl p-4 md:p-6 flex justify-between items-center group hover:bg-gray-200 transition-all cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <span class="text-lg md:text-2xl font-bold">04</span>
+                            <span class="text-base md:text-xl font-semibold">Foto Komersial</span>
+                        </div>
+                        <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
                     </div>
                 </div>
-                <div class="slider-controls">
-                    <button class="slider-btn prev" id="prevTestimonial">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M12 16L6 10L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="slider-pagination" id="testimonialPagination"></div>
-                    <button class="slider-btn next" id="nextTestimonial">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
+
+                <!-- Service Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 md:col-span-2" data-aos="fade-left" data-aos-delay="100">
+                    <div class="bg-gray-200 rounded-2xl p-4 md:p-6 min-h-[150px] md:min-h-[200px]">
+                    </div>
+                    <div class="grid grid-rows-2 gap-4 md:gap-6">
+                        <div class="bg-brown text-white rounded-2xl p-4 md:p-6 min-h-[150px] md:min-h-[200px] flex flex-col justify-between">
+                            <p class="text-cream text-xs md:text-sm mb-2 md:mb-3">
+                                Ingin tahu lebih banyak tentang layanan kami?<br class="hidden sm:block">
+                                Lihat bagaimana kami bekerja untuk memberikan hasil terbaik.
+                            </p>
+                            <div class="flex justify-between items-end">
+                                <h4 class="text-sm md:text-base font-bold mb-2">
+                                    Pelajari Lebih Lanjut
+                                </h4>
+                                <div class="w-8 h-8">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-brown-600 rounded-2xl p-4 md:p-6 min-h-[150px] md:min-h-[200px] relative overflow-hidden flex flex-col justify-between">
+                            <p class="text-brown text-xs md:text-sm mb-2 md:mb-3">
+                                Tim kami terdiri dari fotografer berbakat dengan pengalaman luas di berbagai jenis fotografi. 
+                                Kami berdedikasi untuk memberikan hasil yang melebihi harapan Anda.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-sm md:text-base font-bold text-brown">
+                                    Temui Tim Kami
+                                </h4>
+                                <div class="w-8 h-8">
+                                    <svg class="w-6 h-6 text-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-grid">
-                <div class="contact-left">
-                    <div class="section-label">
-                        <span class="line"></span>
-                        <span class="text">MARI BEKERJA SAMA</span>
-                    </div>
-                    <h2 class="contact-title">
-                        <span class="line">Mulai Proyek</span>
-                        <span class="line highlight">Anda Sekarang</span>
-                    </h2>
-                    <p class="contact-description">
-                        Siap mewujudkan momen istimewa Anda? Hubungi kami sekarang untuk 
-                        konsultasi gratis dan penawaran terbaik.
-                    </p>
+    <!-- Design Process Section -->
+    <section class="bg-brown py-12 md:py-20 relative overflow-hidden">
+        <!-- SVG Background Shape -->
+        <svg class="absolute top-0 left-0 w-full h-20 md:h-32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FFF4E6" fill-opacity="1" d="M0,128L1440,0L1440,0L0,0Z"></path>
+        </svg>
+        
+        <!-- WHY MEET US Vertical Text - Hidden on mobile -->
+        <div class="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 -rotate-90 origin-center z-10">
+            <span class="text-cream font-bold text-sm tracking-widest">
+                PROSES KERJA KAMI
+            </span>
+        </div>
+        
+        <!-- Star Decorations - Hidden on mobile -->
+        <img src="assets/Star 1.png" alt="star" class="hidden md:block absolute top-10 left-20 w-8 h-8 opacity-50 animate-pulse z-10">
+        <img src="assets/Star 1.png" alt="star" class="hidden md:block absolute bottom-20 right-10 w-6 h-6 opacity-30 animate-pulse z-10" style="animation-delay: 1s;">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6" data-aos="fade-down">
+                    Bagaimana Proses<br>
+                    Kerja <span class="text-cream">Kami</span>
+                </h2>
+                <p class="text-cream/70 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4">
+                    Kami mengikuti metodologi yang terbukti untuk memberikan hasil yang luar biasa. Proses kami memastikan 
+                    kejelasan, kolaborasi, dan keunggulan kreatif di setiap tahap proyek Anda.
+                </p>
+            </div>
 
-                    <div class="contact-info-grid">
-                        <div class="info-item">
-                            <div class="info-label">Email</div>
-                            <a href="mailto:info@fotoinpictures.com" class="info-value">
-                                info@fotoinpictures.com
-                            </a>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">Phone</div>
-                            <a href="tel:+6281234567890" class="info-value">
-                                +62 812-3456-7890
-                            </a>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">Location</div>
-                            <div class="info-value">Jakarta, Indonesia</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">Social</div>
-                            <div class="social-links-alt">
-                                <a href="#" class="social-link-alt">Instagram</a>
-                                <a href="#" class="social-link-alt">Facebook</a>
-                                <a href="#" class="social-link-alt">Twitter</a>
-                            </div>
+            <!-- Process Steps -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Step 1 -->
+                <div class="relative p-5 bg-brown-light rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-cream text-4xl font-bold">01</span>
+                    <div class="bg-brown-light overflow-hidden">
+                        <div class="h-60 bg-brown rounded-2xl mt-3"></div>
+                        <div class="mt-3">
+                            <h3 class="text-2xl font-bold text-white">Konsultasi</h3>
+                            <p class="text-cream text-sm">
+                                Kami memulai dengan memahami kebutuhan dan visi Anda untuk memastikan hasil yang sesuai dengan harapan.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-right">
-                    <form class="contact-form-alt" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-field">
-                                <input type="text" id="name" name="name" required>
-                                <label for="name">Nama Anda *</label>
+                <!-- Step 2 -->
+                <div class="relative p-5 bg-brown-light rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <span class="text-cream text-4xl font-bold">02</span>
+                    <div class="bg-brown-light overflow-hidden">
+                        <div class="h-60 bg-brown rounded-2xl mt-3"></div>
+                        <div class="mt-3">
+                            <h3 class="text-2xl font-bold text-white">
+                                Perencanaan
+                            </h3>
+                            <p class="text-cream text-sm">
+                                Kami menyusun konsep pemotretan, menentukan lokasi, pencahayaan, dan gaya yang sesuai dengan kebutuhan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative p-5 bg-brown-light rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <span class="text-cream text-4xl font-bold">03</span>
+                    <div class="bg-brown-light overflow-hidden">
+                        <div class="h-60 bg-brown rounded-2xl mt-3"></div>
+                        <div class="mt-3">
+                            <h3 class="text-2xl font-bold text-white">
+                                Pemotretan
+                            </h3>
+                            <p class="text-cream text-sm">
+                                Tim kreatif kami mengeksekusi sesi foto dengan profesional, menangkap setiap momen dengan sempurna.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative p-5 bg-brown-light rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <span class="text-cream text-4xl font-bold">04</span>
+                    <div class="bg-brown-light overflow-hidden">
+                        <div class="h-60 bg-brown rounded-2xl mt-3"></div>
+                        <div class="mt-3">
+                            <h3 class="text-2xl font-bold text-white">
+                                Editing
+                            </h3>
+                            <p class="text-cream text-sm">
+                                Kami melakukan editing profesional untuk menghasilkan foto berkualitas tinggi yang siap digunakan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SVG Background Shape -->
+        <svg class="absolute bottom-0 left-0 w-full h-96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FFF4E6" fill-opacity="1" d="M0,256L1440,160L1440,320L0,320Z"></path>
+        </svg>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="bg-cream py-8 md:py-10 relative overflow-hidden" id="portfolio">        
+        <!-- WHY MEET US Vertical Text - Hidden on mobile -->
+        <div class="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 -rotate-90 origin-center z-10">
+            <span class="text-brown font-bold text-sm tracking-widest">
+                PORTFOLIO KAMI
+            </span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-brown" data-aos="fade-right">
+                    Karya <span class="text-brown bg-brown/10 px-2 rounded">Terbaik</span> dari<br>
+                    Proyek Sukses Kami
+                </h2>
+                <div class="flex gap-3 md:gap-4" data-aos="fade-left" data-aos-delay="200">
+                    <button onclick="prevSlide()" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:bg-gray-200 transition-colors">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button onclick="nextSlide()" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brown text-white flex items-center justify-center hover:bg-brown-light transition-colors">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carousel Container -->
+            <div class="relative" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                <!-- Left Radio Navigation
+                <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-16 flex flex-col gap-3 z-20">
+                    <button onclick="goToSlide(0)" class="radio-btn w-3 h-3 rounded-full bg-brown transition-all" data-index="0"></button>
+                    <button onclick="goToSlide(1)" class="radio-btn w-3 h-3 rounded-full bg-gray-400 hover:bg-brown transition-all" data-index="1"></button>
+                    <button onclick="goToSlide(2)" class="radio-btn w-3 h-3 rounded-full bg-gray-400 hover:bg-brown transition-all" data-index="2"></button>
+                    <button onclick="goToSlide(3)" class="radio-btn w-3 h-3 rounded-full bg-gray-400 hover:bg-brown transition-all" data-index="3"></button>
+                </div>
+
+                Right Radio Navigation
+                <div class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-16 flex flex-col gap-3 z-20">
+                    <button onclick="goToSlide(0)" class="radio-btn w-3 h-3 rounded-full bg-brown transition-all" data-index="0"></button>
+                    <button onclick="goToSlide(1)" class="radio-btn w-3 h-3 rounded-full bg-gray-400 hover:bg-brown transition-all" data-index="1"></button>
+                    <button onclick="goToSlide(2)" class="radio-btn w-3 h-3 rounded-full bg-gray-400 hover:bg-brown transition-all" data-index="2"></button>
+                    <button onclick="goToSlide(3)" class="radio-btn w-3 h-3 rounded-full bg-gray-400 hover:bg-brown transition-all" data-index="3"></button>
+                </div> -->
+
+                <!-- Carousel Slides -->
+                <div class="carousel-container overflow-hidden relative">
+                    <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide min-w-full">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                                <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-64 md:h-96 flex items-center justify-center">
+                                    <p class="text-gray-400 text-sm md:text-lg">Foto Produk Fashion</p>
+                                </div>
+                                <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-64 md:h-96 flex items-center justify-center">
+                                    <p class="text-gray-400 text-sm md:text-lg">Detail Produk</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <input type="email" id="email" name="email" required>
-                                <label for="email">Alamat Email *</label>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide min-w-full">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                                <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-64 md:h-96 flex items-center justify-center">
+                                    <p class="text-gray-400 text-sm md:text-lg">Momen Pernikahan</p>
+                                </div>
+                                <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-64 md:h-96 flex items-center justify-center">
+                                    <p class="text-gray-400 text-sm md:text-lg">Detail Acara</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <input type="tel" id="phone" name="phone" required>
-                                <label for="phone">Nomor Telepon *</label>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide min-w-full">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                                <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-64 md:h-96 flex items-center justify-center">
+                                    <p class="text-gray-400 text-sm md:text-lg">Event Korporat</p>
+                                </div>
+                                <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-64 md:h-96 flex items-center justify-center">
+                                    <p class="text-gray-400 text-sm md:text-lg">Suasana Acara</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <select id="service" name="service" required>
-                                    <option value="" disabled selected></option>
-                                    <option value="photography">Fotografi</option>
-                                    <option value="videography">Videografi</option>
-                                    <option value="event">Dokumentasi Produk</option>
-                                    <option value="package">Paket Lengkap</option>
-                                </select>
-                                <label for="service">Layanan yang Dibutuhkan *</label>
+
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide min-w-full">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                                <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-64 md:h-96 flex items-center justify-center">
+                                    <p class="text-gray-400 text-sm md:text-lg">Fotografi Komersial</p>
+                                </div>
+                                <div class="bg-white rounded-2xl overflow-hidden shadow-sm h-64 md:h-96 flex items-center justify-center">
+                                    <p class="text-gray-400 text-sm md:text-lg">Kampanye Iklan</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                                <label for="message">Pesan Anda *</label>
-                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SVG Background Shape -->
+        <svg class="absolute bottom-0 left-0 w-full h-96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#6B4423" fill-opacity="1" d="M0,256L1440,160L1440,320L0,320Z"></path>
+        </svg>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-brown py-8 md:py-10 relative overflow-hidden">        
+        <!-- WHY MEET US Vertical Text - Hidden on mobile -->
+        <div class="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 -rotate-90 origin-center z-10">
+            <span class="text-cream font-bold text-sm tracking-widest">
+                TESTIMONI KLIEN
+            </span>
+        </div>
+        
+        <!-- Star Decorations - Hidden on mobile -->
+        <img src="assets/Star 1.png" alt="star" class="hidden md:block absolute top-20 right-32 w-10 h-10 opacity-40 animate-pulse z-10">
+        <img src="assets/Star 1.png" alt="star" class="hidden md:block absolute bottom-32 left-20 w-8 h-8 opacity-30 animate-pulse z-10" style="animation-delay: 0.7s;">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4" data-aos="zoom-in">
+                    <span class="text-cream">Testimoni</span> dari<br>
+                    Klien Puas Kami
+                </h2>
+                <p class="text-cream/70 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4">
+                    Lihat apa yang dikatakan klien kami tentang pengalaman mereka bekerja dengan Fotoin Pictures. 
+                    Kami bangga telah membantu mereka mengabadikan momen berharga dengan hasil yang luar biasa.
+                </p>
+            </div>
+
+            <!-- Testimonial Cards -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
+                <div class="bg-brown-light rounded-2xl p-6 md:p-8" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Client" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="text-white font-bold text-base md:text-lg">Budi Santoso</h4>
+                            <p class="text-gray-400 text-xs md:text-sm">Pemilik Toko Online</p>
                         </div>
-                        <button type="submit" class="btn-submit">
-                            <span>Kirim Pesan</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </button>
-                    </form>
+                    </div>
+                    <p class="text-gray-300 text-sm md:text-base">
+                        "Bekerja dengan Fotoin Pictures sangat menyenangkan. Mereka menghasilkan foto produk yang luar biasa 
+                        dan melebihi ekspektasi kami. Perhatian terhadap detail dan pendekatan kreatif mereka membantu produk 
+                        kami menonjol di pasar yang kompetitif."
+                    </p>
+                </div>
+
+                <div class="bg-brown-light rounded-2xl p-6 md:p-8" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Client" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="text-white font-bold text-base md:text-lg">Siti Nurhaliza</h4>
+                            <p class="text-gray-400 text-xs md:text-sm">Pengantin</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm md:text-base">
+                        "Tim Fotoin Pictures mengabadikan hari pernikahan kami dengan sempurna. Hasilnya luar biasa - 
+                        setiap momen berharga terekam dengan indah. Foto-fotonya sangat natural dan penuh emosi. Sangat 
+                        direkomendasikan!"
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Pagination Dots -->
+            <div class="flex justify-center gap-2">
+                <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-cream"></button>
+                <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-600 hover:bg-gray-500 transition-colors"></button>
+                <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-600 hover:bg-gray-500 transition-colors"></button>
+            </div>
+        </div>
+
+        <!-- SVG Background Shape -->
+        <svg class="absolute bottom-0 left-0 w-full h-64 md:h-96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FFF4E6" fill-opacity="1" d="M0,256L1440,160L1440,320L0,320Z"></path>
+        </svg>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-cream py-8 md:py-10 relative">       
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Typography Hero -->
+            <div class="text-center mb-12 md:mb-16">
+                <div class="mb-6 md:mb-8" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-brown leading-tight mb-2">
+                        ABADIKAN
+                    </h2>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-brown/20 leading-tight mb-2">
+                        CIPTAKAN
+                    </h2>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-brown leading-tight">
+                        KENANGAN
+                    </h2>
+                </div>
+                <p class="text-brown/60 text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase font-bold">
+                    Fotoin Pictures
+                </p>
+            </div>
+            
+            <!-- Content -->
+            <div class="max-w-3xl mx-auto mb-12 md:mb-16">
+                <div class="bg-white/50 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-10 mb-6 md:mb-8">
+                    <p class="text-gray-900 text-lg sm:text-xl md:text-2xl font-bold leading-relaxed mb-4 md:mb-6 text-center">
+                        Menemukan fotografer profesional untuk kebutuhan Anda kini lebih mudah
+                    </p>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
+                        Fotoin Pictures membantu Anda mengabadikan momen berharga dengan hasil berkualitas tinggi. 
+                        Dengan tim profesional dan pengalaman bertahun-tahun, kami siap mewujudkan visi visual Anda.
+                    </p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-stretch sm:items-center" data-aos="fade-up" data-aos-delay="200">
+                    <button class="w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 bg-brown text-white text-sm md:text-base font-bold tracking-wider rounded-xl md:rounded-2xl hover:bg-brown-light transition-all transform hover:scale-105 shadow-lg">
+                        CARI PAKET
+                    </button>
+                    <button class="w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 bg-white text-brown text-sm md:text-base font-bold tracking-wider rounded-xl md:rounded-2xl border-2 border-brown hover:bg-brown hover:text-white transition-all transform hover:scale-105 shadow-lg">
+                        KONSULTASI GRATIS
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <img src="assets/images/logo/logo-footer-transparent.png" alt="Fotoin Pictures" class="logo-img">
-                    </a>
-                    <p class="footer-description">
-                        Mengabadikan momen berharga Anda melalui lensa kreatif dan
-                        sentuhan profesional. Spesialisasi di bidang fotografi,
-                        videografi, dan event organization.
+    <footer class="bg-brown py-12 md:py-16 relative">
+        <!-- SVG Background Shape -->
+        <svg class="absolute top-0 left-0 w-full h-20 md:h-32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FFF4E6" fill-opacity="1" d="M0,128L1440,0L1440,0L0,0Z"></path>
+        </svg>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+                <!-- Logo -->
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-3">
+                    <img src="assets/logo/logo-footer-transparent.png" alt="Fotoin Pictures Logo" class="h-10 md:h-12 lg:h-14 w-auto">
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-400 text-xs md:text-sm">abadikan. ciptakan. kenangan</p>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-xs md:text-sm">
+                        Copyright © 2026 Fotoin Pictures. Hak cipta dilindungi.
                     </p>
-                    <div class="footer-contact">
-                        <a href="mailto:info@fotoinpictures.com" class="footer-contact-item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M3 4h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M2 5l8 5 8-5" stroke="currentColor" stroke-width="1.5"/>
-                            </svg>
-                            info@fotoinpictures.com
-                        </a>
-                        <a href="tel:+6281234567890" class="footer-contact-item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M3 3h3.5l1.5 4-2 1.5a11 11 0 0 0 5.5 5.5l1.5-2 4 1.5v3.5a1 1 0 0 1-1 1A14 14 0 0 1 2 4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5"/>
-                            </svg>
-                            +62 812-3456-7890
-                        </a>
-                    </div>
                 </div>
 
-                <div class="footer-nav">
-                    <div class="footer-column">
-                        <h4 class="footer-heading">Jelajahi</h4>
-                        <ul class="footer-list">
-                            <li><a href="#home">Beranda</a></li>
-                            <li><a href="#work">Portofolio</a></li>
-                            <li><a href="#services">Layanan</a></li>
-                            <li><a href="#contact">Kontak</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4 class="footer-heading">Layanan</h4>
-                        <ul class="footer-list">
-                            <li><a href="#services">Fotografi Pernikahan</a></li>
-                            <li><a href="#services">Video Komersial</a></li>
-                            <li><a href="#services">Manajemen Acara</a></li>
-                            <li><a href="#services">Fotografi Produk</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4 class="footer-heading">Ikuti Kami</h4>
-                        <ul class="footer-list">
-                            <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2026 Fotoin Pictures. Hak cipta dilindungi.</p>
-                <div class="footer-legal">
-                    <a href="#">Kebijakan Privasi</a>
-                    <span class="divider">•</span>
-                    <a href="#">Syarat Layanan</a>
+                <!-- Social Links -->
+                <div class="flex gap-3 md:gap-4">
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-brown-light rounded-full flex items-center justify-center hover:bg-cream hover:text-brown transition-all">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-brown-light rounded-full flex items-center justify-center hover:bg-cream hover:text-brown transition-all">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-brown-light rounded-full flex items-center justify-center hover:bg-cream hover:text-brown transition-all">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-brown-light rounded-full flex items-center justify-center hover:bg-cream hover:text-brown transition-all">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 4;
+        let autoplayInterval;
+
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update radio buttons
+            const radioButtons = document.querySelectorAll('.radio-btn');
+            radioButtons.forEach((btn, index) => {
+                if (parseInt(btn.dataset.index) === currentSlide) {
+                    btn.classList.remove('bg-gray-400');
+                    btn.classList.add('bg-brown');
+                } else {
+                    btn.classList.remove('bg-brown');
+                    btn.classList.add('bg-gray-400');
+                }
+            });
+
+            // Update indicator dots
+            const indicatorDots = document.querySelectorAll('.indicator-dot');
+            indicatorDots.forEach((dot, index) => {
+                if (parseInt(dot.dataset.index) === currentSlide) {
+                    dot.classList.remove('bg-gray-400');
+                    dot.classList.add('bg-brown');
+                } else {
+                    dot.classList.remove('bg-brown');
+                    dot.classList.add('bg-gray-400');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+            resetAutoplay();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+            resetAutoplay();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+            resetAutoplay();
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+
+        // Start autoplay when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCarousel();
+            startAutoplay();
+        });
+
+        // Pause autoplay on hover
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', function() {
+                clearInterval(autoplayInterval);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', function() {
+                startAutoplay();
+            });
+        }
+    </script>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking on a link
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
